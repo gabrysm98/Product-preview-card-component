@@ -1,0 +1,143 @@
+:root {
+  --Dark-cyan: hsl(158, 36%, 37%);
+  --Cream: hsl(30, 38%, 92%);
+  --Very-dark-blue: hsl(212, 21%, 14%);
+  --Dark-grayish-blue: hsl(228, 12%, 48%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--Cream);
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.product-card {
+  background-color: #fff;
+  margin: 2em 1em;
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.product-card::before {
+  content: "";
+  display: block;
+  background: url("./images/image-product-mobile.jpg") no-repeat;
+  background-position: center center;
+  background-size: contain;
+  min-height: 15em;
+}
+
+.product-card-container {
+  font-family: "Montserrat";
+  padding: 2rem;
+}
+
+.category {
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  color: var(--Dark-grayish-blue);
+  margin-bottom: 1em;
+}
+
+.product-name {
+  font-family: "fraunces";
+  text-transform: capitalize;
+  line-height: 100%;
+  margin-bottom: 0.5em;
+}
+
+.description {
+  color: var(--Dark-grayish-blue);
+  font-size: 1.4rem;
+  line-height: 150%;
+  margin-bottom: 1.6rem;
+}
+
+.new-price {
+  font-family: "fraunces";
+  font-size: 2em;
+  color: var(--Dark-cyan);
+}
+
+.old-price {
+  color: var(--Dark-grayish-blue);
+  text-decoration: line-through;
+  vertical-align: super;
+  font-size: 1.4rem;
+  margin-left: 1em;
+}
+
+.addToCart-button {
+  background-color: var(--Dark-cyan);
+  font-family: "montserrat";
+  font-weight: 500;
+  font-size: 1em;
+  color: var(--White);
+  width: 100%;
+  padding: 1em;
+  border: none;
+  border-radius: 1em;
+  margin-top: 1.6em;
+}
+
+.btn-icon {
+  margin: 0.6rem 1rem 0 0;
+}
+
+@media screen and (min-width: 376px) {
+  .product-card::before {
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .product-card {
+    display: flex;
+    margin: 0;
+    max-width: 50vw;
+  }
+  .product-card::before {
+    background-image: url("./images/image-product-desktop.jpg");
+    background-size: cover;
+    width: 50%;
+  }
+  .product-card-container {
+    width: 50%;
+    padding: 2.5em;
+  }
+
+  .category,
+  .product-name {
+    margin-bottom: 3rem;
+  }
+  .product-name {
+    font-size: 2.5em;
+  }
+  .description {
+    line-height: 150%;
+    font-size: 1.6rem;
+    margin: 0 1em 3rem 0;
+  }
+
+  .addToCart-button {
+    margin-top: 3rem;
+  }
+  .addToCart-button:hover {
+    background-color: hsl(158, 36%, 20%);
+    cursor: pointer;
+  }
+}
